@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const task = await Task.findOne({ _id: req.params.id, userId: req.userId });
-    if (!task) return res.status(404).json({ error: 'Task not found' });
+    if (!task) return res.status(404).json({ error: 'Task  is not found' });
     res.json({ task });
   } catch {
     res.status(500).json({ error: 'Failed to fetch task' });
